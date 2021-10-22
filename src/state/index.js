@@ -14,6 +14,7 @@ import {
   householdElig,
   serviceUnitReducer,
   locationReducer,
+  mapsReducer,
   serviceRatingReducer,
   genderReducer,
   serviceTypeProgramsReducer,
@@ -39,6 +40,7 @@ export const rootReducer = combineReducers({
   serviceTypePrograms: serviceTypeProgramsReducer,
   race: raceReducer,
   ethnicity: ethnicityReducer,
+  maps: mapsReducer,
 });
 
 const logger = createLogger({

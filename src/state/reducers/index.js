@@ -17,3 +17,4 @@ export { serviceTypeProgramsReducer } from './serviceTypeProgramsReducer';
 export { raceReducer } from './raceReducer';
 export { ethnicityReducer } from './ethnicityReducer';
 export { householdElig } from './householdEligReducer';
+export { mapsReducer } from './mapsReducer';
