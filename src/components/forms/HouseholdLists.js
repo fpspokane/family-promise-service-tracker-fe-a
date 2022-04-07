@@ -26,7 +26,6 @@ function HouseholdList(props) {
   return (
     <div className="">
       <div className="serviceButton">{createListItems()}</div>
-      );
     </div>
   );
 }
