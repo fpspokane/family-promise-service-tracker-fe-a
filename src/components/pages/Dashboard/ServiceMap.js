@@ -9,6 +9,8 @@ import CITIES from './cities.json';
 import CityInfo from './City-Info';
 import CityPin from './city-pin';
 
+import { axiosWithAuth } from '../../../utils/axiosWithAuth';
+
 export default function ServiceMap(props) {
   const [viewport, setViewport] = useState({
     latitude: 47.658779,
@@ -23,12 +25,14 @@ export default function ServiceMap(props) {
   const [post, setPost] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/service_type').then(response => {
-      const allservices = response.data;
-      setPost(allservices);
+    axiosWithAuth()
+      .get('/api/service_type')
+      .then(response => {
+        const allservices = response.data;
+        setPost(allservices);
 
-      console.log(allservices);
-    });
+        console.log(allservices);
+      });
   }, []);
 
   const [popupInfo, setPopupInfo] = useState(null);
