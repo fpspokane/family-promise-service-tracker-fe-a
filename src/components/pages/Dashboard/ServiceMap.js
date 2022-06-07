@@ -3,11 +3,15 @@ import axios from 'axios';
 import { useState, useRef, useEffect } from 'react';
 // import ReactMapGL, { Source, Layer } from 'react-map-gl';
 import ReactMapGL, { Marker, Popup, NavigationControl } from 'react-map-gl';
+import 'mapbox-gl/dist/mapbox-gl.css';
+
 import { clusterLayer } from './layers';
 import './styles.css';
 import CITIES from './cities.json';
 import CityInfo from './City-Info';
 import CityPin from './city-pin';
+
+import { axiosWithAuth } from '../../../utils/axiosWithAuth';
 
 export default function ServiceMap(props) {
   const [viewport, setViewport] = useState({
@@ -23,12 +27,14 @@ export default function ServiceMap(props) {
   const [post, setPost] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/service_type').then(response => {
-      const allservices = response.data;
-      setPost(allservices);
+    axiosWithAuth()
+      .get('/api/service_type')
+      .then(response => {
+        const allservices = response.data;
+        setPost(allservices);
 
-      console.log(allservices);
-    });
+        console.log(allservices);
+      });
   }, []);
 
   const [popupInfo, setPopupInfo] = useState(null);
