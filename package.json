@@ -13,6 +13,7 @@
     "axios": "^0.21.1",
     "babel-jest": "^24.9.0",
     "craco-less": "^1.17.0",
+    "mapbox-gl": "^2.8.2",
     "multiselect-react-dropdown": "^1.6.11",
     "plotly.js": "^1.54.6",
     "rc-tween-one": "^2.7.3",
@@ -70,12 +71,18 @@
     "production": [
       ">0.2%",
       "not dead",
-      "not op_mini all"
+      "not ie 11",
+      "not chrome < 51",
+      "not safari < 10",
+      "not android < 51"
     ],
     "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+      ">0.2%",
+      "not dead",
+      "not ie 11",
+      "not chrome < 51",
+      "not safari < 10",
+      "not android < 51"
     ]
   },
   "devDependencies": {
@@ -100,7 +107,6 @@
     "prompts": "^2.3.2",
     "yaml": "^1.10.0"
   },
-
   "engines": {
     "node": "16.14.0"
   }

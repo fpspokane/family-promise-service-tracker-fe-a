@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useState, useRef, useEffect } from 'react';
 // import ReactMapGL, { Source, Layer } from 'react-map-gl';
 import ReactMapGL, { Marker, Popup, NavigationControl } from 'react-map-gl';
+import 'mapbox-gl/dist/mapbox-gl.css';
+
 import { clusterLayer } from './layers';
 import './styles.css';
 import CITIES from './cities.json';
